@@ -1,0 +1,249 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{titling}
+\usepackage{fancybox, calc} 
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel}
+\usepackage{rawfonts}
+\usepackage{pictexwd}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\title{Sobre grafos $(x,y)$-regulares}
+\subtitle{Aplicaciones de Teoría de Grafos}
+\author{Emmanuel Norambuena}
+\date{10 de Julio 2019}
+\begin{document}
+\maketitle
+
+\addcontentsline{tic}{section}{Índice general\newline}%originalmente era:  \addcontentsline{toc}{section}{Índice general}
+\tableofcontents
+
+\section{Introducción}
+A continuación presento los resultados de un trabajo investigativo en el campo de la teoría de grafos. Aquí observaremos sus diversas aplicaciones en múltiples disciplinas. La primera proposición es aplicable en problemas de la industria como la distribución eléctrica, telecomunicaciones, teoría de redes, modelamiento de gestión de empresas de delivery, transporte, entre otras. El resto de resultados son aplicables principalmente a química orgánica, siendo casos particulares de la primera proposición presentada.
+
+\section{Definiciones fundamentales}
+Sean:\newline
+(1) $G$ un grafo $(x,y)-regular$ con $x,y \in \mathbb{N}$.  Los elementos de $G$ se explican en las definiciones (2) a (8).\newline
+(2) $\delta(Z)$ el grado de un vértice $Z \in G$\newline
+(3) $C_1,C_2,...,C_k,...,C_{|C|-1},C_{|C|} \in \{Z\in G:$$\delta(Z)=x\}$   .\newline
+(4) $H_1,H_2,...,H_i,...,H_{|H|-1},H_{|H|} \in \{Z\in G:$$\delta(Z)=y\}$ \newline
+(5) $|C|=\#\{Z\in G:\delta(Z)=x\}$\newline
+(6) $|H|=\#\{Z\in G:\delta(Z)=y\}$\newline
+(7) $C(C_k)$ la suma de cantidad de aristas entre $C_k$ y cada $C_j \in G :j\not =k \wedge k,j  \in \{1,...,|C|\}$.\newline
+(8) $H(C_k)$ la suma de cantidad de aristas entre $C_k$ y cada $H_j \in G :j\not =k \wedge k \in \{1,...,|C|\} \wedge j \in \{1,...,|H|\}$.\newline
+(9) $$|C(C)|=\frac{1}{2}\sum_{l=1}^{|C|}\{ C(C_l)$$
+
+\section{Proposición General}
+\newtheorem{myteo}{Teorema} 
+\begin{center} 
+\shadowbox{\parbox{\columnwidth-2\fboxsep-2\fboxrule-\shadowsize}{ 
+\centering 
+\begin{myteo}[Proposición General] 
+\texttt{} 
+En un grafo $(x,y)-regular$ con $x,y \in \mathbb{N}$,
+$$|H|=\left\lfloor \frac{x|C|-2|C(C)|}{y} \right\rfloor$$
+\end{myteo} 
+}} 
+\end{center}
+A continuación se presenta su demostración.\newline\newline
+Note que:\newline\newline
+$$H(C_k)+C(C_k)=\delta(C_k)$$
+Luego,\newline
+$$H(C_k)=\delta(C_k)-C(C_k)$$
+$$\Rightarrow H(C_k)=x-C(C_k)$$
+$$\Rightarrow \sum_{l=1}^{|C|}H(C_k)=\sum_{l=1}^{|C|}x-\sum_{l=1}^{|C|}C(C_k)$$
+Por (9),\newline
+$$\sum_{l=1}^{|C|}H(C_k)=x|C|-2|C(C)|$$
+$$\Rightarrow\frac{1}{y}\sum_{l=1}^{|C|}H(C_k)=\frac{x|C|-2|C(C)|}{y}$$
+Note que $$|H|=\left\lfloor \frac{1}{y}\sum_{l=1}^{|C|}H(C_k) \right\rfloor$$\newline
+$$\therefore|H|=\left\lfloor \frac{x|C|-2|C(C)|}{y} \right\rfloor$$\newline
+Concluye la demostración de la Proposición General del autor. Los siguientes resultados son casos particulares de esta proposición, aunque se presentan independientemente a continuación.
+
+\section{Definiciones específicas para Química Orgánica}
+Sean:\newline
+(1) $G$ un grafo que modela la fórmula estructural extendida de un hidrocarburo. Los elementos de $G$ se explican en las definiciones (2) a (12).\newline
+(2) $|C|$ la cantidad de átomos de carbono.\newline
+(3) $|H|$ la cantidad de átomos de hidrógeno.\newline
+(4) $C_1,C_2,...,C_k,...,C_{|C|-1},C_{|C|}$  vértices de $G$ de grado 4, (representan a los átomos de carbono por lo que tienen tetravalencia).\newline
+(5) $H_1,H_2,...,H_i,...,H_{|H|-1},H_{|H|}$ vértices de $G$ de grado 1 (representan a los átomos de hidrógeno).\newline
+(6) $\delta(X)$ la cantidad de enlaces $\sigma$ del vértice X/$X \in G$. \newline
+(7) $\gamma(C_k)$ la cantidad de enlaces $\pi$ de $C_k$. \newline
+(8) $C^*$  vértices $C_k$ tal que $\gamma(C_k)>0$. \newline
+(9) $\pi$ la cantidad de enlaces $\pi$ totales en $G$.\newline
+(10) $\sigma$ la cantidad de enlaces $\sigma$ totales en $G$.\newline
+(11) $*$ la cantidad de vértices $C^*$.\newline
+(12) $C(c)$ la cantidad de enlaces entre dos átomos de carbono presentes en $G$.\newline
+
+\section{Pequeña Proposición}
+\newtheorem{myteo2}{Teorema} 
+\begin{center} 
+\shadowbox{\parbox{\columnwidth-2\fboxsep-2\fboxrule-\shadowsize}{ 
+\centering 
+\begin{myteo}[Pequeña Proposición] 
+\texttt{} 
+En un hidrocarburo,
+$$|H|=4|C|-2C(c)$$
+\end{myteo} 
+}} 
+\end{center}
+A continuación se presenta su demostración.\newline\newline
+Note que:\newline\newline
+Por tetravalencia del carbono,
+$$\delta(C_k)+\gamma(C_k)=4$$
+\begin{equation}
+\delta(C_k)=4-\gamma(C_k)
+\end{equation}\newline
+Por definiciones (7) y (9), y porque los enlaces $\pi$ son bidireccionales (doble conteo),
+\begin{equation}
+\pi=\frac{1}{2}\sum_{l=1}^{|C|}\gamma(C_l)
+\end{equation}
+Por definiciones (3) y (5),
+\begin{equation}
+\sum_{l=1}^{|H|}\delta(H_l)=\sum_{l=1}^{|H|}1=|H|
+\end{equation}
+
+\begin{equation}
+\sigma=|H|+C(c)-\pi
+\end{equation}Por (1),
+$$\sum_{l=1}^{|C|}\delta(C_l)=\sum_{l=1}^{|C|}\left[4-\gamma(C^*_l)\right]$$
+$$\sum_{l=1}^{|C|}\delta(C_l)=\sum_{l=1}^{|C|}4-\sum_{l=1}^{|C|}\gamma(C^*_l)$$
+\begin{equation}
+\sum_{l=1}^{|C|}\delta(C_l)=4|C|-2\pi
+\end{equation}Note que:
+$$\sigma=\frac{1}{2}\sum_{l=1}^{|C|}\delta(C_l)+\frac{1}{2}\sum_{l=1}^{|H|}\delta(H_l)$$
+$$\sigma=\frac{1}{2}\sum_{l=1}^{|C|}\delta(C_l)+\frac{|H|}{2}$$
+$$\sigma=\frac{4|C|-2\pi}{2}+\frac{|H|}{2}$$
+\begin{equation}
+\sigma=2|C|-\pi+\frac{|H|}{2}
+\end{equation}Como (2) = (6):\newline
+$$|H|+C(c)-\pi=2|C|-\pi+\frac{|H|}{2}$$
+$$4|C|+|H|=2|H|+2C(c)$$
+\begin{equation}
+\therefore|H|=4|C|-2C(c)
+\end{equation}\newline Concluye la demostración de la Pequeña Proposición del autor.
+
+\section{Proposición Principal}
+\newtheorem{myteo3}{Teorema} 
+\begin{center} 
+\shadowbox{\parbox{\columnwidth-2\fboxsep-2\fboxrule-\shadowsize}{ 
+\centering 
+\begin{myteo}[Proposición Principal] 
+\texttt{} 
+En un hidrocarburo,
+$$\sigma=4|C|-C(c)-\pi$$
+\end{myteo} 
+}} 
+\end{center}A continuación se presenta su demostración:\newline\newline
+Reemplazando (7) en (6):\newline
+$$\sigma=2|C|-\pi+\frac{4|C|-2C(c)}{2}$$
+$$\sigma=2|C|-\pi+2|C|-C(c)$$
+\begin{equation}
+\therefore\sigma=4|C|-C(c)-\pi
+\end{equation} \newline Concluye la demostración de la Proposición Principal del autor.
+
+\section{Proposición Principal Generalizada}
+Sean:\newline
+(13) $G'$ un grafo que modela la fórmula estructural extendida de un hidrocarburo con grupos funcionales, tal que si se remueve todo átomo distinto de hidrógeno o carbono de su fórmula estructural extendida, el grafo compuesto por todos los átomos de carbono es conexo. En adelante todos los elementos de $G'$ se nombran añadiento un apostrofe luego de la nomenclatura que corresponda.\newline
+(14) Diferencia Funcional, en adelante $\bigtriangleup F$, la diferencia entre la cantidad de átomos de hidrógeno de $G'$ y la cantidad de átomos de hidrógeno de este al remover sus grupos funcionales:
+$$\bigtriangleup F=|H|'-|H|$$
+De estas definiciones y de la Proposición Principal se desprende lo siguiente.
+\newtheorem{myteo4}{Teorema} 
+\begin{center} 
+\shadowbox{\parbox{\columnwidth-2\fboxsep-2\fboxrule-\shadowsize}{ 
+\centering 
+\begin{myteo}[Proposición Principal Generalizada] 
+\texttt{} 
+En un hidrocarburo con grupos funcionales,
+$$\sigma'=4|C|'-C(c)'-\pi'+\bigtriangleup F$$
+\end{myteo} 
+}} 
+\end{center}
+
+\section{Corolarios}
+A continuación se presentan algunos corolarios y aplicaciones de la Proposición Principal Generalizada propuestas por el autor.
+\subsection{Cantidad de hidrógenos}
+\newtheorem{myteo5}{Teorema} 
+\begin{center} 
+\shadowbox{\parbox{\columnwidth-2\fboxsep-2\fboxrule-\shadowsize}{ 
+\centering 
+\begin{myteo}[Pequeña Proposición Generalizada] 
+\texttt{} 
+En un hidrocarburo con grupos funcionales,
+$$|H|'=4|C|'-2C(c)'+\bigtriangleup F$$
+\end{myteo} 
+}} 
+\end{center}
+\subsection{Fórmulas Moleculares}
+\shadowbox{\parbox{\columnwidth-2\fboxsep-2\fboxrule-\shadowsize}{ 
+
+
+\texttt{} 
+En un hidrocarburo con grupos funcionales, sea, su fórmula molecular es de la forma:
+$$C_{|C|'}H_{4|C|'-2C(c)'+\bigtriangleup F} . . .$$}
+}
+
+\section{Proposiciones Particulares}
+\subsection{Para Alifáticos}
+\newtheorem{myteo6}{Teorema} 
+\begin{center} 
+\shadowbox{\parbox{\columnwidth-2\fboxsep-2\fboxrule-\shadowsize}{ 
+\centering 
+\begin{myteo}[Proposición Particular para Alifáticos] 
+\texttt{} 
+En un hidrocarburo con grupos funcionales,
+$$\sigma'=1+3|C|'-2\pi'+\bigtriangleup F$$
+\end{myteo} 
+}} 
+\end{center}
+
+
+En Teoría de Grafos, un alifático es equivalente a un árbol en que se cumplen las definiciones (1) a (14).\newline
+(15) En un árbol el número de aristas en una unidad menos que la cantidad de vértices que posea independientemente del grado de sus vértices.\newline
+(16) Sea $\Omega$ la cantidad de enlaces $\sigma$ entre dos átomos de carbono.\newline \newline A continuación se presenta su demostración:\newline \newline
+Por propiedad (16),
+\begin{equation}
+\Omega=C(c)'-\pi'
+\end{equation}\newline
+Por propiedad (15) y (16),
+\begin{equation}
+\Omega=|C|-1
+\end{equation}
+Como (10) = (11),
+$$C(c)'-\pi'=|C|'-1$$
+\begin{equation}
+0=C(c)'-\pi'-|C|'+1
+\end{equation}
+Por (12) y Proposición Principal Generalizada,
+$$\sigma'=4|C|'-C(c)'-\pi'+\bigtriangleup F+C(c)'-\pi'-|C|'+1$$
+\begin{equation}
+\therefore\sigma'=1+3|C|'-2\pi'+\bigtriangleup F
+\end{equation}\newline
+Concluye la demostración de la Proposición Particular para Alifáticos.
+
+\subsection{Para Monocíclicos}
+(17) Sea un monocíclico producto de enlazar un átomo de carbono extremo ($M_1$) de un alifático con otro de sus átomos de carbono ($M_2$).
+\newtheorem{myteo7}{Teorema} 
+\begin{center} 
+\shadowbox{\parbox{\columnwidth-2\fboxsep-2\fboxrule-\shadowsize}{ 
+\centering 
+\begin{myteo}[Proposición Particular para Monocíclicos] 
+\texttt{} 
+En un hidrocarburo con grupos funcionales,
+$$\sigma=3|C|-2\pi+\bigtriangleup F$$
+\end{myteo} 
+}} 
+\end{center}
+A continuación se presenta su demostración:\newline \newline
+(18) Por (17), la cantidad de enlaces $\sigma$ de un monocíclico es equivalente a la de su alifático predecesor sumado a un enlace $\sigma$ entre los átomos $M_1$ y $M_2$. Además, al formarse un nuevo enlace tanto en $M_1$ como en $M_2$, ambos pierden un enlace $\sigma$ con un átomo de hidrógeno. \newline\newline
+Por (18) y Proposición Particular para Alifáticos.
+$$\sigma'=1+3|C|'-2\pi'+\bigtriangleup F+1-2$$
+\begin{equation}
+\therefore\sigma'=3|C|'-2\pi'+\bigtriangleup F
+\end{equation}\newline
+Concluye la demostración de la Proposición Particular para Monocíclicos.
+\end{document}
